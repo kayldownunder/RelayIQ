@@ -22,12 +22,13 @@ you always pick the recipient and hit send yourself, nothing goes out automatica
 - A physical device or emulator running Android 8.0 (API 26) or later
 - A [Claude API key](https://console.anthropic.com/) if you want to use
   "Fix spelling & punctuation"
+-Or a OpenAI ChatGPT or Google Gemini API Key
 
 ## Getting started
 
 1. Clone the repo:
    ```
-   git clone https://github.com/kayldownunder/Relay.git
+   git clone https://github.com/kayldownunder/RelayIQ.git
    ```
 2. Open the project folder in Android Studio and let it sync Gradle.
 3. Run the `app` configuration on a device or emulator (▶ in Android Studio, or
