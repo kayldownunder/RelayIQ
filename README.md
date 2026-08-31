@@ -1,4 +1,4 @@
-# Relay
+# RelayIQ
 
 Speak, polish, and send. Relay turns speech into a clean text message and hands it
 off to SMS, WhatsApp, Messenger, Teams, Email, or any other app on your phone -
