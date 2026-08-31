@@ -22,6 +22,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Relay"
+rootProject.name = "RelayIQ"
 include(":app")
  

@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    namespace = "com.k.hosken.relay"
+    namespace = "com.k.hosken.relayiq"
     compileSdk {
         version = release(37)
     }
 
     defaultConfig {
-        applicationId = "com.k.hosken.relay"
+        applicationId = "com.k.hosken.relayiq"
         minSdk = 26
         targetSdk = 37
         versionCode = 1

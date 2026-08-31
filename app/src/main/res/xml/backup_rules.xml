@@ -3,5 +3,5 @@
    data_extraction_rules.xml handles the same exclusion for API 31+.
 -->
 <full-backup-content>
-    <exclude domain="sharedpref" path="relay_api_key_prefs.xml" />
+    <exclude domain="sharedpref" path="relayiq_api_key_prefs.xml" />
 </full-backup-content>
