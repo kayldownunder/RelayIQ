@@ -23,6 +23,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -93,7 +94,7 @@ fun SettingsScreen(
                         color = Color.White,
                         fontSize = 30.sp,
                         fontWeight = FontWeight.Black,
-                        modifier = Modifier.offset(y = (-2).dp)
+                        modifier = Modifier.offset(y = (-5).dp)
                     )
                 }
 
@@ -162,7 +163,43 @@ fun SettingsScreen(
                 onLockClick = onApiKeyLockClick
             )
 
+            Spacer(modifier = Modifier.height(16.dp))
+
+            AboutSetting()
+
             Spacer(modifier = Modifier.height(24.dp))
+        }
+    }
+}
+
+@Composable
+private fun AboutSetting() {
+    val uriHandler = LocalUriHandler.current
+
+    SettingsSectionContainer {
+
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    uriHandler.openUri("https://kayldownunder.github.io/RelayIQ/")
+                },
+            horizontalArrangement = Arrangement.SpaceBetween,
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+
+            Text(
+                text = "About",
+                color = Color.White,
+                fontSize = 18.sp,
+                fontWeight = FontWeight.Bold
+            )
+
+            Text(
+                text = "Privacy Policy ↗",
+                color = Color.White.copy(alpha = 0.7f),
+                fontSize = 14.sp
+            )
         }
     }
 }
