@@ -21,7 +21,28 @@ object MessageSender {
             message
         )
 
-        context.startActivity(intent)
+        try {
+
+            context.startActivity(intent)
+
+        } catch (e: Exception) {
+
+            val fallback = Intent(Intent.ACTION_SEND)
+
+            fallback.type = "text/plain"
+
+            fallback.putExtra(
+                Intent.EXTRA_TEXT,
+                message
+            )
+
+            context.startActivity(
+                Intent.createChooser(
+                    fallback,
+                    "No messaging app found"
+                )
+            )
+        }
     }
 
     fun sendWhatsApp(

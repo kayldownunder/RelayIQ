@@ -1,6 +1,5 @@
 package com.k.hosken.relayiq
 
-import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
@@ -13,7 +12,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
-import androidx.core.app.ActivityCompat
 import androidx.lifecycle.lifecycleScope
 import com.k.hosken.relayiq.ai.AiProvider
 import com.k.hosken.relayiq.messaging.MessageSender
@@ -78,14 +76,6 @@ class MainActivity : ComponentActivity() {
         colorName = AppPreferences.getColorName(this, colorName)
         selectedProvider = AppPreferences.getSelectedProvider(this)
         apiKey = AppPreferences.getApiKey(this, selectedProvider)
-
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(
-                Manifest.permission.RECORD_AUDIO
-            ),
-            100
-        )
 
         setContent {
 
