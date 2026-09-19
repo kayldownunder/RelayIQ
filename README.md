@@ -52,12 +52,21 @@ you to add one in Settings instead of failing silently.
 
 ## Building a release build
 
-```
-./gradlew assembleRelease
-```
+1. Copy `keystore.properties.sample` to `keystore.properties` and fill in the
+   upload keystore path, alias, and passwords (the file and the `.jks` are
+   git-ignored - never commit them).
+2. Bump `versionCode` (and `versionName`) in `app/build.gradle.kts` - Play
+   rejects an upload whose `versionCode` it has already seen.
+3. Build the signed bundle:
+   ```
+   ./gradlew bundleRelease
+   ```
+   Output: `app/build/outputs/bundle/release/app-release.aab`. Upload that to
+   the Play Console; the R8 mapping file is in
+   `app/build/outputs/mapping/release/mapping.txt` if you want to upload it for
+   deobfuscated crash reports.
 
-Release builds are unsigned by default - add your own signing config in
-`app/build.gradle.kts` before distributing a release APK/AAB.
+Play store listing text and assets are in `store-assets/`.
 
 ## Project structure
 
