@@ -11,23 +11,29 @@
 </head>
 <body>
     <h1>Privacy Policy</h1>
-    <p>Last updated: September 3, 2026</p>
+    <p>Last updated: September 20, 2026</p>
 
     <p><strong>KaylDownUnder</strong> built the <strong>RelayIQ</strong> app as a free app. This Service is provided by <strong>KaylDownUnder</strong> at no cost and is intended for use as is.</p>
 
     <h2>What RelayIQ does with your data</h2>
     <p>RelayIQ does not have its own server, does not create user accounts, and does not collect, store, or transmit any personal information to KaylDownUnder.</p>
 
-    <p>The one exception is the optional <strong>"Fix spelling &amp; punctuation"</strong> feature. If you choose to use it, the message text currently on your screen is sent directly from your device to the AI provider you've selected in Settings &mdash; Anthropic (Claude), OpenAI (ChatGPT), or Google (Gemini) &mdash; using an API key you provide yourself. RelayIQ never sees or stores that text; it is sent straight from your device to that provider and back. Review the relevant provider's own privacy policy for how they handle it:</p>
+    <p>If you use the optional <strong>"Fix spelling &amp; punctuation"</strong> feature, the message text on your screen is sent over HTTPS directly to the AI provider selected in Settings &mdash; Anthropic (Claude), OpenAI (ChatGPT), or Google (Gemini). Your API key is sent to that provider to authenticate the request. The developer does not receive your text or key. The provider processes the text and returns an edited message; its retention and data-use terms apply. Review the relevant provider's privacy policy:</p>
     <ul>
         <li><a href="https://www.anthropic.com/legal/privacy" target="_blank" rel="noopener">Anthropic (Claude)</a></li>
         <li><a href="https://openai.com/policies/privacy-policy" target="_blank" rel="noopener">OpenAI (ChatGPT)</a></li>
         <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google (Gemini)</a></li>
     </ul>
-    <p>If you don't add an API key or don't use the Polish feature, no message text ever leaves your device through RelayIQ.</p>
+    <p>If you don't use the Polish feature, RelayIQ does not send your message to an AI provider. Speech recognition and sharing with other apps are described below.</p>
+
+    <h2>Speech recognition</h2>
+    <p>When you tap Speak, RelayIQ opens the speech recognizer installed on your device. RelayIQ does not record or store audio itself. Your speech service may transmit audio to its servers according to its settings and privacy policy. RelayIQ receives the resulting text to display in the message box.</p>
 
     <h2>Local data storage</h2>
-    <p>RelayIQ has no accounts and no server-side storage. Your API key(s) and display preferences (text size, font, colour) are stored only in the app's private storage on your device. API keys are specifically excluded from Android's automatic backup and device-transfer features, so they never leave your device even when your phone backs up or transfers to a new one &mdash; each install starts blank, and you add your own key.</p>
+    <p>API keys and display preferences are saved in the app's private storage. API keys are excluded from Android backup and device transfer; display preferences may be backed up by Android. Keys are transmitted only to the selected provider when authenticating a polish request. Message drafts are held in memory and are not saved by RelayIQ.</p>
+
+    <h2>Retention and deletion</h2>
+    <p>Use Clear to remove the current message. You can remove a provider's key in Settings, or clear the app's storage in Android settings to delete all locally saved keys and preferences. Uninstalling removes the app's local data. The developer holds no server-side copy to delete. For data processed by an AI provider, speech service, or messaging app, use that service's privacy controls or contact that service.</p>
 
     <h2>Sending messages</h2>
     <p>When you tap Send, RelayIQ opens your phone's own Messages, WhatsApp, Messenger, Teams, or Email app (or a general share sheet) with your text pre-filled. You choose the recipient and send it yourself &mdash; RelayIQ does not send anything automatically and has no visibility into who you send it to.</p>
