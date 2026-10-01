@@ -3,6 +3,7 @@ package com.k.hosken.relayiq.ai
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
 import java.io.OutputStreamWriter
@@ -101,6 +102,8 @@ object OpenAiTextPolisher : TextPolisher {
                 } else {
                     Result.success(polishedText)
                 }
+            } catch (e: JSONException) {
+                Result.failure(IOException("OpenAI returned an unreadable response. Please try again.", e))
             } catch (e: IOException) {
                 Result.failure(e)
             } finally {

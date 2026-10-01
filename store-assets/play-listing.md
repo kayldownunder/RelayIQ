@@ -5,8 +5,8 @@
 - **Category:** Communication (or Productivity)
 - **Package:** com.k.hosken.relayiq
 - **Contact email:** kayl.hosken@gmail.com
-- **Privacy policy URL:** the hosted copy of `index.html` (GitHub Pages) - push the
-  updated `index.html` first so the live page matches the app.
+- **Privacy policy URL:** https://kayldownunder.github.io/RelayIQ/ - publish the
+  updated `index.html` before submitting for review.
 - **Free app**, no ads, no in-app purchases (matches the privacy policy).
 
 ## Short description (max 80)
@@ -20,7 +20,9 @@ choose.
 
 **Fix spelling & punctuation** - optionally tidy up grammar and punctuation while
 keeping your meaning and tone. Bring your own API key for Claude (Anthropic),
-ChatGPT (OpenAI), or Gemini (Google) - RelayIQ has no server and never sees your text.
+ChatGPT (OpenAI), or Gemini (Google). Your text is sent directly to your chosen
+provider. An API key is required for polishing, and provider charges may apply.
+Typing, dictation, and sharing work without an AI key.
 
 **Send anywhere** - SMS, WhatsApp, Messenger, Microsoft Teams, Email, or any
 other app via the share sheet. You always pick the recipient and press send
@@ -29,27 +31,46 @@ yourself; nothing goes out automatically.
 **Make it yours** - choose text size, font, and text colour for the message box.
 
 **Private by design** - no accounts, no ads, no tracking. Your API key and
-preferences stay in the app's private storage on your device and are excluded
-from Android backup and device transfer.
+preferences are saved in the app's private storage. API keys are excluded from
+Android backup and device transfer; display preferences may be backed up.
+Your device's speech service may process audio online under its own policy.
 
 ## Graphic assets
 | Asset | Status |
 |---|---|
 | App icon 512x512 | Done - `relayiq-play-store-icon-512.png` |
-| Feature graphic 1024x500 | **TODO** |
-| Phone screenshots (2-8, 16:9 or 9:16, min 320px) | **TODO** - capture Home, Settings, and Send options |
+| Feature graphic 1024x500 | Created - `feature-graphic-1024x500.png` |
+| Phone screenshots | Created - `screenshots/01-home.png` and `screenshots/02-settings.png` (both 1080x2000); Send options screenshot still outstanding |
+
+## Release handoff
+
+- The project is configured for versionCode 2 / versionName 1.0.
+- The latest local bundle is `app/build/outputs/bundle/release/app-release.aab`
+  (built September 20, 2026). The bundles named `RelayIQ.aab` in that directory
+  and `app/release/app-release.aab` are older September 4 artifacts.
+- The previous session stopped at the Google Play Console developer account
+  chooser for "Kayl Down Under". Console setup and uploads are not confirmed.
+- Resume by opening the developer account and checking the existing app and
+  release status before uploading assets or creating a release.
 
 ## Data safety form (suggested answers - review before submitting)
-- **Does the app collect or share user data?** The developer collects nothing. The
-  optional "Fix spelling & punctuation" feature sends the on-screen message text
-  from the device straight to the AI provider the user selected, using the
-  user's own API key. Declare this as **shared** data: *Messages / Other
-  user-generated content*, purpose *App functionality*, and mark it **optional**
-  (user-initiated).
+- **Does the app collect or share user data?** Yes. Google's definition of
+  collection includes transmission to third parties, even when the developer
+  receives nothing. AI polishing sends message text and an authentication key
+  to the selected provider. Declare message drafts under the applicable
+  *Messages / Other user-generated content* categories as collected, optional,
+  for app functionality. Review whether the API credential also requires a
+  user identifier declaration. Do not claim ephemeral processing without
+  verifying provider retention. Assess sharing using Google's user-initiated
+  transfer exception and the provider's role; optional does not mean exempt
+  from the collection declaration.
 - **Data encrypted in transit:** Yes (HTTPS to all three providers).
-- **Can users request data deletion:** No data is held by the developer; say so.
+- **Deletion:** users can remove local keys or clear app storage. Provider-held
+  data follows provider controls; do not claim a developer-operated deletion
+  service exists.
 - **Audio:** the app declares no RECORD_AUDIO permission. Speech recognition is done
-  by the system recognizer via `RecognizerIntent`, so the app does not collect audio.
+  by the system recognizer via `RecognizerIntent`. RelayIQ receives text, not
+  audio; the recognizer may process audio online.
 - **Location, contacts, financial, identifiers, ads:** none.
 
 ## Other Play Console forms
@@ -63,3 +84,8 @@ from Android backup and device transfer.
 - **First release:** if this is a personal account created after Nov 2023, Google
   requires a closed test with 12+ testers for 14 days before you can apply for
   production access.
+
+## Official references
+- Release upload: https://support.google.com/googleplay/android-developer/answer/9859348
+- Data safety definitions: https://support.google.com/googleplay/android-developer/answer/10787469
+- Store assets: https://support.google.com/googleplay/android-developer/answer/9866151

@@ -1,5 +1,6 @@
 package com.k.hosken.relayiq
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
@@ -160,7 +161,8 @@ class MainActivity : ComponentActivity() {
                     messageFontSizeSp = textSizeSp,
                     messageFontFamily = fontOptions.firstOrNull { it.name == fontName }?.family
                         ?: fontOptions.first().family,
-                    messageTextColor = colorOptions.first { it.name == colorName }.color
+                    messageTextColor = (colorOptions.firstOrNull { it.name == colorName }
+                        ?: colorOptions.first()).color
                 )
 
                 Screen.Settings -> SettingsScreen(
@@ -271,6 +273,14 @@ class MainActivity : ComponentActivity() {
             Locale.getDefault()
         )
 
-        speechLauncher.launch(intent)
+        try {
+            speechLauncher.launch(intent)
+        } catch (_: ActivityNotFoundException) {
+            Toast.makeText(
+                this,
+                "Speech recognition isn't available. You can type your message instead.",
+                Toast.LENGTH_LONG
+            ).show()
+        }
     }
 }

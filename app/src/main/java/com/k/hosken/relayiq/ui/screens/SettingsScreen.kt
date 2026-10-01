@@ -242,8 +242,8 @@ private fun ApiKeySetting(
         Spacer(modifier = Modifier.height(4.dp))
 
         Text(
-            text = "Used by \"Fix spelling & punctuation\" to refine your message with " +
-                "${selectedProvider.displayName}. Tap the lock to choose a provider and " +
+            text = "Tapping \"Fix spelling & punctuation\" sends your message text to " +
+                "${selectedProvider.displayName} using your API key. Provider charges may apply. Tap the lock to choose a provider and " +
                 "view or edit its key.",
             color = Color.White.copy(alpha = 0.7f),
             fontSize = 13.sp

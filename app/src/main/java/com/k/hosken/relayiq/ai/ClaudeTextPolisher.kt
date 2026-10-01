@@ -3,6 +3,7 @@ package com.k.hosken.relayiq.ai
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
 import java.io.OutputStreamWriter
@@ -106,6 +107,8 @@ object ClaudeTextPolisher : TextPolisher {
                 } else {
                     Result.success(polishedText.toString().trim())
                 }
+            } catch (e: JSONException) {
+                Result.failure(IOException("Claude returned an unreadable response. Please try again.", e))
             } catch (e: IOException) {
                 Result.failure(e)
             } finally {

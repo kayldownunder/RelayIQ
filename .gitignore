@@ -21,3 +21,11 @@ local.properties
 
 # Local release build output (AAB + R8 mapping)
 /app/release/
+/play-upload/
+
+# Signing material never goes to GitHub (1 Oct)
+*.pem
+*.jks.bak
+*.keystore.bak
+# Local AI tool settings
+.claude/

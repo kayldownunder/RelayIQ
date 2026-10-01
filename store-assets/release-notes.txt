@@ -1,0 +1,5 @@
+<en-US>
+Speak or type your message, optionally polish spelling and punctuation with your own AI API key, and share through your favourite messaging apps.
+Customise text size, font, and colour.
+Includes clearer privacy information and improved error handling.
+</en-US>

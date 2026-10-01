@@ -23,7 +23,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.k.hosken.relayiq"
+        applicationId = "com.k.hosken.RelayIQ"
         minSdk = 26
         targetSdk = 37
         versionCode = 2

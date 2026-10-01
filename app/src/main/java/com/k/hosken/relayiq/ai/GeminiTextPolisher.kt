@@ -3,6 +3,7 @@ package com.k.hosken.relayiq.ai
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray
+import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
 import java.io.OutputStreamWriter
@@ -12,7 +13,7 @@ import java.nio.charset.StandardCharsets
 
 object GeminiTextPolisher : TextPolisher {
 
-    private const val MODEL = "gemini-1.5-flash"
+    private const val MODEL = "gemini-2.5-flash-lite"
     private const val ENDPOINT =
         "https://generativelanguage.googleapis.com/v1beta/models/$MODEL:generateContent"
 
@@ -105,6 +106,8 @@ object GeminiTextPolisher : TextPolisher {
                 } else {
                     Result.success(polishedText)
                 }
+            } catch (e: JSONException) {
+                Result.failure(IOException("Gemini couldn't return a message. Try again or choose another provider.", e))
             } catch (e: IOException) {
                 Result.failure(e)
             } finally {
